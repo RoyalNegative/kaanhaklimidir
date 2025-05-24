@@ -5,15 +5,29 @@ const closeBtn = document.querySelector('.close');
 
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-// HAYIR butonu için kaçma fonksiyonu
-hayirBtn.addEventListener('mouseover', () => {
+// Mobil cihaz kontrolü
+const isMobile = window.innerWidth <= 768;
+
+let hayirSize = 1;
+
+function moveAndShrinkHayir() {
+    // HAYIR butonu küçülür
+    hayirSize = Math.max(0.5, hayirSize - 0.1);
+    hayirBtn.style.transform = `scale(${hayirSize})`;
+    
+    // Rastgele yere gider
     const x = Math.random() * (window.innerWidth - hayirBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - hayirBtn.offsetHeight);
-    
     hayirBtn.style.position = 'absolute';
     hayirBtn.style.left = `${x}px`;
     hayirBtn.style.top = `${y}px`;
-});
+}
+
+// Masaüstü için hover davranışı
+hayirBtn.addEventListener('mouseover', moveAndShrinkHayir);
+
+// Mobil için tıklama davranışı
+hayirBtn.addEventListener('click', moveAndShrinkHayir);
 
 // Modal açma fonksiyonu
 evetBtn.addEventListener('click', () => {
