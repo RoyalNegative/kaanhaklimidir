@@ -4,45 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaan Hakli mi?</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin: 40px 0;
-            font-size: 2.5em;
-        }
-        
-        .container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
-        }
-        
-        .btn {
-            padding: 15px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .evet {
-            background-color: #4CAF50;
-            color: white;
-        }
-        
-        .hayir {
-            background-color: #f44336;
-            color: white;
-            position: relative;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Tartışmalarınızda Kaan haklı mı?</h1>
@@ -51,17 +13,14 @@
         <button class="btn hayir" id="hayirBtn">HAYIR</button>
     </div>
 
-    <script>
-        const hayirBtn = document.getElementById('hayirBtn');
-        
-        hayirBtn.addEventListener('mouseover', () => {
-            const x = Math.random() * (window.innerWidth - hayirBtn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - hayirBtn.offsetHeight);
-            
-            hayirBtn.style.position = 'absolute';
-            hayirBtn.style.left = `${x}px`;
-            hayirBtn.style.top = `${y}px`;
-        });
-    </script>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Teşekkür ederim</h2>
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHdncGM5Y2RrMm9qZXVkaWZla3N5azMycWk1aDFiZHpzNDBtN2hmYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oi0JonClnrLGj7vzHX/giphy.gif" alt="Teşekkür GIF">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
