@@ -3,6 +3,8 @@ const modal = document.getElementById('modal');
 const evetBtn = document.querySelector('.evet');
 const closeBtn = document.querySelector('.close');
 
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
 // HAYIR butonu için kaçma fonksiyonu
 hayirBtn.addEventListener('mouseover', () => {
     const x = Math.random() * (window.innerWidth - hayirBtn.offsetWidth);
